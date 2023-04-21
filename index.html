@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+        .grid {
+          padding: 15px;
+          background-color: steelblue;
+          color: white;
+  
+        }
+        .gridA {
+          padding: 12px;
+          background-color: lightsteelblue;
+          color: black;
+  
+        }
+        </style>
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Velkommen til Microblog!</title>
+        {% endif %}
+    </head>
+
+    <body>
+        <div class="grid">Welcome to the testbench</div>
+        <div class="gridA">Chapter 2: Templates</div>
+        <a href="upload_file">Upload</a> 
+        <h4>Hei {{ user.username }}, nytt passord er: {{ user.password }}!</h4>
+        {% for post in posts%}
+        <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+        {% endfor %}  
+
+    </body>
+</html>
